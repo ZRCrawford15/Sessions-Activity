@@ -16,9 +16,22 @@ app.set('port', 23950);
 app.get('/count', function(req, res) {
 	let context = {};
 	context.count = req.session.count || 0;
-	req.session.count = context.count += 1;
+	req.session.count = context.count + 1;
 	res.render('count', context)
 });
+
+app.post('/count', function(req, res) {
+	let context = {};
+	if (req.body.command === "resetCount"){
+		req.session.count = 0;
+	} else {
+		context.err = true;
+	}
+	context.count = req.session.count || 0;
+	req.session.count = context.count + 1;
+	res.render('counter', context);
+
+})
 
 
 app.listen(app.get('port'), function(){
