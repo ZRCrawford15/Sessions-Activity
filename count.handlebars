@@ -1,3 +1,9 @@
+{{#unless err}}
 <h1>Times you have visited this page is {{count}}<h1>
 <br>
-<button type="button" id="reset" value="resetCount">Reset Count</button>
+<form action="/count" method="post">
+	<input type="submit" name="command" value="resetCount">
+</form>
+{{else}}
+<h1> Invalid Submission!</h1>
+{{/unless}}
