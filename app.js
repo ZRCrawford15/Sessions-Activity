@@ -17,7 +17,7 @@ app.get('/count', function(req, res) {
 	let context = {};
 	context.count = req.session.count || 0;
 	req.session.count = context.count += 1;
-	res.render('counter', context)
+	res.render('count', context)
 });
 
 
