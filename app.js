@@ -1,7 +1,7 @@
 let express = require('express');
 
 let app = express();
-let handlebars = require('express-handlebars').create({defaultLayout}:'main');
+let handlebars = require('express-handlebars').create({defaultLayout:'main'});
 let session = require('express-session');
 let bodyParser = require('body-parser');
 
